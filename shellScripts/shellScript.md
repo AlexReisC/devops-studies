@@ -17,6 +17,9 @@ touch meu_script.sh
 #!/bin/bash
 echo "Olá mundo!"
 ```
+Shell scripts começam com um `shebang`, ele informa que o script deve ser interpretado pelo Bash. Você pode usar outra interpretador shell como `#!/bin/sh`.
+
+`echo` é um comando usado para exibir uma mensagem no terminal.
 
 4. Dê permissão de execução ao script:
 ```bash
@@ -29,6 +32,7 @@ chmod +x meu_script.sh
 ```
 
 ### Variáveis e Entrada do Usuário
+Podemos criar variáveis e interagir com o usuário:
 ```bash
 #!/bin/bash
 nome="Alex"
@@ -38,6 +42,13 @@ echo "Qual é o seu nome?"
 read usuario
 echo "Bem-vindo, $usuario!"
 ```
+Variáveis são definidas com `=` sem espaços ao redor dp `=`. Para usar uma variável colocamos `$` antes de seu nome. Podemos fazer atribuições do tipo:
+```bash
+pais=Brasil
+novo_pais=$pais
+```
+
+O comando `read` permite capturar uma entrada do usuário.
 
 ### Condicionais
 ```bash
@@ -51,8 +62,18 @@ else
     echo "O número é menor ou igual a 10."
 fi
 ```
+No shell script usamos `[]` para testar condições. Operadores comuns são:
+* -eq -> igual a (==)
+* -ne -> diferente de (!=)
+* -gt -> maior que (>)
+* -lt -> menor que (<)
+* -ge -> maior ou igual (>=)
+* -le -> menor ou igual (<=)
+* -a -> AND (operador lógico)
+* -o -> OR (operador lógico)
 
 ### Laços de repetição
+
 **For loop**
 ```bash
 #!/bin/bash
@@ -70,8 +91,10 @@ while [ $contador -le 5 ]; do
     ((contador++))
 done
 ```
+Usamos `((expressão++))` para incrementar valores.
 
 ### Funções
+Podemos criar funções:
 ```bash
 #!/bin/bash
 diz_ola() {
@@ -81,8 +104,10 @@ diz_ola() {
 diz_ola "Alex"
 diz_ola "Maria"
 ```
+O `$1` é usado para indicar o primeiro argumento passado, e não está restrito ser usado em funções.
 
 ### Trabalhando com arquivos e diretórios
+Criar, ler e manipular arquivos:
 ```bash
 #!/bin/bash
 echo "Criando um arquivo..."
@@ -91,3 +116,8 @@ echo "Este é um arquivo de teste." > teste.txt
 echo "Conteúdo do arquivo:"
 cat teste.txt
 ```
+A expressão `echo "texto" > texto.txt` escreve um text dentro de um arquivo.
+
+`cat`é usado para exibir o conteúdo de um arquivo.
+
+Existem muitos outros comandos e coisas possiveís que se pode fazer comm shell script mas esta é uma introdução básica.
