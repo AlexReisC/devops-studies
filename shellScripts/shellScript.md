@@ -81,7 +81,7 @@ diz_ola "Alex"
 diz_ola "Maria"
 ```
 
-## Trabalhando com arquivos e diretórios
+### Trabalhando com arquivos e diretórios
 ```bash
 #!/bin/bash
 echo "Criando um arquivo..."
