@@ -14,6 +14,7 @@ touch meu_script.sh
 2. Abra o arquivo no editor.
 3. Adicione o código:
 ```bash
+#!/bin/bash
 echo "Olá mundo!"
 ```
 
@@ -71,8 +72,8 @@ done
 ```
 
 ### Funções
-#!/bin/bash
 ```bash
+#!/bin/bash
 diz_ola() {
     echo "Olá, $1!"
 }
